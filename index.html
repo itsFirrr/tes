@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mwehehheheh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="question">Wee ayy mauka bertanya</div>
+    <div class="buttons">
+        <button id="yesBtn">nda boleeee</button>
+        <button id="noBtn">apa sayangg</button>
+    </div>
+
+    <script>
+        // Fungsi untuk memindahkan tombol
+        function moveButton(button) {
+            const randomX = Math.random() * (window.innerWidth - button.clientWidth);
+            const randomY = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.position = 'absolute';
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+
+        // Event listener untuk tombol "Tidak"
+        const noBtn = document.getElementById('noBtn');
+        noBtn.addEventListener('mouseenter', () => moveButton(noBtn));
+
+        // Event listener untuk tombol "Ya"
+        const yesBtn = document.getElementById('yesBtn');
+        yesBtn.addEventListener('click', () => {
+            // Menampilkan alert ketika tombol "Ya" ditekan
+            alert('hiks jahatnya ayy');
+            // Refresh halaman untuk kembali ke keadaan awal
+            location.reload();
+        });
+    </script>
+
+</body>
+</html>
