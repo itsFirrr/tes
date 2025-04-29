@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mwehehheheh</title>
+    <title>Mweheheheh</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -17,8 +17,10 @@
         }
 
         .question {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         .buttons {
@@ -27,10 +29,27 @@
         }
 
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
             transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        #noBtn {
+            background-color: #f44336;
+        }
+
+        #noBtn:hover {
+            background-color: #e53935;
         }
     </style>
 </head>
@@ -43,7 +62,10 @@
     </div>
 
     <script>
-        // Fungsi untuk memindahkan tombol
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+
+        // Fungsi untuk memindahkan tombol "Tidak"
         function moveButton(button) {
             const randomX = Math.random() * (window.innerWidth - button.clientWidth);
             const randomY = Math.random() * (window.innerHeight - button.clientHeight);
@@ -52,16 +74,10 @@
             button.style.top = `${randomY}px`;
         }
 
-        // Event listener untuk tombol "Tidak"
-        const noBtn = document.getElementById('noBtn');
-        noBtn.addEventListener('click', () => moveButton(noBtn));
+        noBtn.addEventListener('mouseover', () => moveButton(noBtn));
 
-        // Event listener untuk tombol "Ya"
-        const yesBtn = document.getElementById('yesBtn');
         yesBtn.addEventListener('click', () => {
-            // Menampilkan alert ketika tombol "Ya" ditekan
             alert('hiks jahatnya');
-            // Refresh halaman untuk kembali ke keadaan awal
             location.reload();
         });
     </script>
